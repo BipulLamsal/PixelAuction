@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assests/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Pixel Auction</title>
+</head>
+<body>
+    <div class="overlay">hi</div>
+    <div class="auction-container">
+        <div class="auction-box-model">
+
+            <div class="auction-box-row">
+                <div class="box-round">
+                    <p>Round <span class="box-round-no">1</span>/9</p>
+                    </div>
+        
+                    <div class="box-coin">
+                        <img src="assests/imgs/coin.png">
+                        <p>$<span class="box-coin-value">1000 </span></p>
+                    </div>
+            </div>
+
+            <div class="auction-main-showcase">
+                <img src="https://source.unsplash.com/random/?painting,silk,colorful" alt="random" id="pixelitimg" >
+                <canvas id="pixelitcanvas"></canvas>
+                <p class="pixel-art-title">Pixel Art Auction</p>
+                <div class="sold-container">
+                    <p>Sold Out For $<span>200</span></p>
+                </div>
+                <div class="showcase-button">
+                <p class="icon-download"><i class="fa-solid fa-download"></i></p>
+                <p class="icon-share"><i class="fa-solid fa-share"></i></p>
+                
+
+            </div>
+            </div> 
+        </div>
+
+            <div class="auction-box-model">
+                <div class="bid-container">
+                    <div class="bid-amount">
+                    <input type="number" class="bid-number" value="100">
+                    </div>
+                    <div class="btn-skip">
+                        <p>Skip</p>
+                    </div>
+                    
+                    <div class="btn-bid">
+                        <p>Bid</p>
+                    </div>
+
+                </div>
+            </div>
+
+    </div>
+<script src="assests/js/script.js"></script>
+<script src="assests/js/pixelate.js"></script>
+<script src="assests/js/pixel.js"></script>
+</body>
+</html>

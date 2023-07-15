@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); 
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-image: url("../imgs/pattern.svg");
+    overflow-x: hidden;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323', monospace;
+}
+.auction-container
+{
+height: 100%;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.auction-box-model
+{
+
+    width: 400px;
+    max-width: 400px;
+    margin: 10px;
+    background-color: #282A3A;
+    border-radius: 5px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+.auction-box-row
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #bdc2be;
+}
+.box-round
+{
+    background-color: #191825;
+    padding: 5px;
+    border-radius: 5px;
+}
+.box-coin
+{
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+img
+{
+height: 20px;
+width: 20px;
+
+}
+p{
+    color: #F7C04A;
+}
+
+}
+.auction-main-showcase
+{
+    margin-top: 10px;
+    position: relative;
+
+    .showcase-button
+    {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        
+
+        p{
+            transition: transform 0.1s ease-in-out;
+            cursor: pointer;
+            padding: 5px;
+            margin: 10px 0 ;
+            text-align: center;
+            background-color: #F7C04A;
+            color: #191825;
+        }
+
+        p:hover{
+
+            transform: translateY(-2px);
+        }
+
+    }
+    
+    img,canvas{
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 5px;
+    }  
+    
+    .pixel-art-title
+    {
+        background-color: #191825;
+        color: #bdc2be  ;
+        font-size: 24px;
+        position: absolute;
+        bottom: -40px;
+        padding: 10px;
+        border-radius: 5px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+        width: 80%;
+
+
+    }
+    .sold-container
+    {
+        display: none;
+        background-color: #191825;
+        color: #bdc2be  ;
+        font-size: 24px;
+        position: absolute;
+        top: 50%;
+        padding: 10px;
+        border-radius: 5px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.3);
+        width: 80%;
+    
+    
+
+    }
+}
+
+.bid-container
+{
+display: flex;
+align-items: center;
+gap: 10px;
+.bid-amount
+{
+width: 60%;
+input{
+    font-family: 'VT323', monospace;
+    color: #F7C04A;
+    width: 100%;
+    padding: 5px;
+    font-size: 24px;
+    background-color: #191825;
+    border: none;
+    border-radius: 5px;
+}
+}
+
+.btn-skip,.btn-bid
+{
+    transition: transform 0.1s ease;
+width: 20%;
+text-align: center;
+background-color: #F7C04A;
+font-size: 24px;
+padding: 5px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+:not(:first-child):hover{
+transform: translateY(-2px);
+
+}
+
+
+}
+
+.overlay
+{
+    transition: width 0.1s ease-in-out;
+    display: none   ;
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+    background-color: #19182500;
+    width: 100%;
+}
