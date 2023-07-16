@@ -11,6 +11,7 @@ let overlay = document.querySelector(".overlay");
 let btninfoclose = document.querySelector(".btn-info-close");
 let displayinfo = document.querySelector(".display-info");
 let displayscore = document.getElementById("score-card");
+let resetbtn = document.querySelector('.btn-result-close');
 
 let total = 1000;
 let roundno = 1;
@@ -28,7 +29,7 @@ function Score(score)
   this.score = score;
 }
 
-ScoreNum = new Score(0);
+let ScoreNum = new Score(0);
 
 
 let detailScore = [];
@@ -131,23 +132,18 @@ btnbid.addEventListener("click", function () {
 
       setTimeout(function () {
         RemoveDisplay(msgContainer);
-      }, 2000);
-      setTimeout(function () {
         overlay.style.display = "none";
       }, 2000);
       total = changeTotal(total, place);
-
       score = score + 100;
-      ScoreNum = new Score(score);
+      ScoreNum.score = score;
       roundno++;
     } else {
       score = score + parseInt((place / random) * 10);
-      ScoreNum = new Score(score);
+      ScoreNum.score = score;
       showMessage("soldout", random);
       setTimeout(function () {
         RemoveDisplay(msgContainer);
-      }, 2000);
-      setTimeout(function () {
         overlay.style.display = "none";
       }, 2000);
       roundno++;
@@ -161,6 +157,7 @@ btnbid.addEventListener("click", function () {
   setTimeout(function () {
     round.innerHTML = roundno;
     overlay.style.display = "none";
+    alert(roundno, total);   
 
     if (roundno == 10 || total == 0) {
       round.innerHTML = roundno - 1;
@@ -178,12 +175,13 @@ btnskip.addEventListener("click", function () {
 
     arttitle.innerHTML = generatePrompt(prompt1, prompt2);
     roundno++;
-    round.innerHTML = roundno;
+
     showMessage("skip", random);
     setTimeout(function () {
       RemoveDisplay(msgContainer);
       overlay.style.display = "none";
       changeImage();
+      round.innerHTML = roundno;
     }, 2000);
   } else {
     showScore();
@@ -244,13 +242,38 @@ function RemoveDisplay(model) {
 
 function showScore() {
   overlay.style.display = "block";
-  overlay.style.filter = "blur(20px)";
-  overlay.style.backgroundColor = "#19182555";
+  overlay.style.backgroundColor = "#19182573";
   displayscore.classList.remove("display-close");
   document.querySelector('.display-result-head').innerHTML = `<i class="fa-solid fa-trophy"></i> Your Score : ${ScoreNum.score}`;
   detailScore.map((item)=>{
   document.querySelector('.display-result-tail').insertAdjacentHTML ("afterbegin",`<p><i class="fa-solid fa-bolt"></i> ${item.price} - You Bought ${item.title}</p>`);
-  })
+
+})
+
+document.querySelector('.btn-result-close').style.width = "100%";
+document.querySelector('.btn-result-close').style.transform = "scale(1)";
+
+}
+
+resetbtn.addEventListener('click', function(){
+  overlay.style.display = 'none';
+  displayscore.classList.add("display-close");
+  changeImage();
+  arttitle.innerHTML = generatePrompt(prompt1, prompt2);
+  score = 0;
+  ScoreNum.score =0;
+  roundno = 1;
+  round.innerHTML = roundno;
+  total = changeTotal(1000,0);
+  detailScore.splice(0,detailScore.length);
+  overlay.style.backgroundColor = "#19182500";
+  removeAllChildNodes(document.querySelector('.display-result-tail'));
 
 
+})
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
 }

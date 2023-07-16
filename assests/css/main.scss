@@ -18,15 +18,15 @@ body {
 }
 .auction-container {
     height: 100%;
-    width: 100%;
+    width: 400px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .auction-box-model {
-    width: 400px;
-    max-width: 400px;
+    width: 95%;
     margin: 10px;
     background-color: #282a3a;
     border-radius: 5px;
@@ -247,3 +247,11 @@ body {
     width: 100%;
 
 }
+@media (max-width: 530px) {
+
+    .display-info,.display-result
+    {
+        width: 95%;
+    }
+
+  }

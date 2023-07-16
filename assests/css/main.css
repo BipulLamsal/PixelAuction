@@ -18,7 +18,8 @@ body {
 
 .auction-container {
   height: 100%;
-  width: 100%;
+  width: 400px;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,8 +27,7 @@ body {
 }
 
 .auction-box-model {
-  width: 400px;
-  max-width: 400px;
+  width: 95%;
   margin: 10px;
   background-color: #282a3a;
   border-radius: 5px;
@@ -226,4 +226,10 @@ body {
   z-index: 99;
   height: 100%;
   width: 100%;
+}
+
+@media (max-width: 530px) {
+  .display-info, .display-result {
+    width: 95%;
+  }
 }/*# sourceMappingURL=main.css.map */
