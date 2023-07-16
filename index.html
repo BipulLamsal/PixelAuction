@@ -9,12 +9,38 @@
     <title>Pixel Auction</title>
 </head>
 <body>
-    <div class="overlay">hi</div>
+    <div class="overlay"></div>
+
+    <div class="display-info">
+           <p class="display-info-head"><i class="fa-solid fa-circle-info"></i> How to play?</p>
+        <div class="display-info-tail">
+            <p><i class="fa-solid fa-bolt"></i> Pixelated art is bidded in the auction.</p>
+            <p><i class="fa-solid fa-bolt"></i> Place your bid, for the art. You have only $1000 to spend so, spend carefully.</p>
+            <p><i class="fa-solid fa-bolt"></i> If you won the bid, you add your score by the price of the art.</p>
+            <p><i class="fa-solid fa-bolt"></i> If you lose the bid, you add your score based on how close your bid was with the sold price.</p>
+            <p><i class="fa-solid fa-bolt"></i> Total 9 rounds, share your bid score with your friends.</p>
+        </div>
+        <p class="btn-info-close">Play!</p>
+    </div>
+
+    <div class="display-close display-result" id = "score-card">
+        <p class="display-result-head"><i class="fa-solid fa-trophy"></i> Your Score : 200</p>
+     <div class="display-result-tail">
+        
+     </div>
+     <p class="btn-result-close">Play Again!</p>
+ </div>
+
+
+
+
+
+
     <div class="auction-container">
         <div class="auction-box-model">
 
             <div class="auction-box-row">
-                <div class="box-round">
+                <div class="box-round"> 
                     <p>Round <span class="box-round-no">1</span>/9</p>
                     </div>
         
@@ -28,7 +54,7 @@
                 <img src="https://source.unsplash.com/random/?painting,silk,colorful" alt="random" id="pixelitimg" >
                 <canvas id="pixelitcanvas"></canvas>
                 <p class="pixel-art-title">Pixel Art Auction</p>
-                <div class="sold-container">
+                <div class="sold-container sold-closed">
                     <p>Sold Out For $<span>200</span></p>
                 </div>
                 <div class="showcase-button">
