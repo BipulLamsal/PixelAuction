@@ -157,7 +157,6 @@ btnbid.addEventListener("click", function () {
   setTimeout(function () {
     round.innerHTML = roundno;
     overlay.style.display = "none";
-    alert(roundno, total);   
 
     if (roundno == 10 || total == 0) {
       round.innerHTML = roundno - 1;
